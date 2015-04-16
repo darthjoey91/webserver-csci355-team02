@@ -14,7 +14,7 @@ import gettext
 # end wxGlade
 
 if not os.geteuid() == 0:
-    subprocess.Popen(['gksudo','Apache']).communicate()
+    subprocess.Popen(['gksudo','ApacheGUI']).communicate()
 class Gui(wx.Frame):
     def __init__(self, *args, **kwds):
         # begin wxGlade: Gui.__init__
@@ -62,8 +62,7 @@ class Gui(wx.Frame):
         subprocess.Popen(['sudo', 'service', 'apache2', 'stop']).communicate()
 
     def home(self, event):  # wxGlade: Gui.<event_handler>
-        print "Event handler 'home' not implemented!"
-        event.Skip()
+        subprocess.Popen(['nohup','google-chrome','localhost']).communicate()
 
 # end of class Gui
 if __name__ == "__main__":
